@@ -1,0 +1,76 @@
+'fileTypes': [
+   #To remove this association you will also need to edit index.coffee in the root folder.
+  'shtml',
+  'shtm'
+]
+'scopeName': 'text.html.ssi'
+'foldingStartMarker': '<!--#'
+'foldingStopMarker': '-->'
+'name': 'Server Side Includes'
+'patterns': [
+  {
+    'include': '#commands'
+  }
+  {
+    'include': 'text.html.basic'
+  }
+]
+'repository':
+  'commands':
+    {
+      'begin': '(<!--#)\\s{0,}([\\w-]+)'
+      'beginCaptures':
+        '1':
+          'name': 'punctuation.definition.block.begin.ssi'
+        '2':
+          'name': 'entity.name.function.ssi'
+      'end': '(-->)'
+      'endCaptures':
+        '1':
+          'name': 'punctuation.definition.block.end.ssi'
+      'name': 'meta.tag.name.ssi'
+      'patterns': [
+        {
+          'include': '#parameters'
+        }
+        {
+          'include': '#string-double-quoted'
+        }
+        {
+          'include': '#string-single-quoted'
+        }
+      ]
+    }
+  'parameters':
+    {
+      'match': '\\b([a-zA-Z0-9-]+)(=)'
+      'captures':
+        '1':
+          'name': 'entity.other.atrribute-name.ssi'
+      'name': 'entity.other.atrribute-name.ssi'
+    }
+  'string-double-quoted':
+    {
+      'begin': '"'
+      'beginCaptures':
+        '0':
+          'name': 'punctuation.definition.string.begin.ssi'
+      'end': '"'
+      'endCaptures':
+        '0':
+          'name': 'punctuation.definition.string.end.ssi'
+      'name': 'string.quoted.double.ssi'
+    }
+
+  'string-single-quoted':
+    {
+      'begin': '\''
+      'beginCaptures':
+        '0':
+          'name': 'punctuation.definition.string.begin.ssi'
+      'end': '\''
+      'endCaptures':
+        '0':
+          'name': 'punctuation.definition.string.end.ssi'
+      'name': 'string.quoted.single.ssi'
+    }
