@@ -5,3 +5,6 @@ and `.shtm` files, and snippets for SSI tags.
 ### This module is currently a work in progress!
 More to come as I use it and grow it more, but right now
 it's better than nothing.
+
+## Thanks!
+To @Sneagan for easy to learn from [atom-handlebars](https://github.com/Sneagan/atom-handlebars) code
