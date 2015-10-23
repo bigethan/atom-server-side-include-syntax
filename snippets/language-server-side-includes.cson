@@ -21,5 +21,5 @@
   'SSI: Echo Variable':
     'prefix': 'echo'
     'body': """
-      <!--# echo var="${1:variable}" default="no ${1:variable} found" encoding="entity"" -->
+      <!--# echo var="${1:variable}" default="no ${1:variable} found" encoding="entity" -->
     """
