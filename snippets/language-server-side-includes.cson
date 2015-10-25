@@ -1,25 +1,28 @@
 '.text.html.ssi':
 
   'SSI: Include File':
-    'prefix': 'infile'
+    'prefix': 'includefile'
     'body': """
       <!--# include file="${1: file}" -->
     """
 
   'SSI: Include Virtual File':
-    'prefix': 'invirt'
+    'prefix': 'includevirtual'
     'body': """
-      <!--# include virtual="${1:file}" set="${2:set}" stub="${2:stub}" wait="${2:wait}"  -->
+      <!--# include virtual="${1:file}" set="${2:set}" stub="${3:stub}" wait="${4:wait}"  -->
     """
 
   'SSI: Set Variable':
-    'prefix': 'set'
+    'prefix': 'setvar'
     'body': """
-      <!--# set var="${1:variable}" value="${2:value}" -->
+      <!--# set
+        var="${1:variable}"
+        value="${2:value}"
+      -->
     """
 
   'SSI: Echo Variable':
-    'prefix': 'echo'
+    'prefix': 'echovar'
     'body': """
       <!--# echo var="${1:variable}" default="no ${1:variable} found" encoding="entity" -->
     """
